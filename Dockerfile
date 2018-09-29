@@ -9,7 +9,7 @@ WORKDIR /usr/src/hexo-blog
 # 复制当前所有文件到编译容器中
 COPY . .
 # 安装子模块
-RUN git submodule init && git submodule update
+# RUN git submodule init && git submodule update
 # 安装 hexo-cli
 RUN npm install hexo-cli -g && npm install
 # 生成静态文件
@@ -26,4 +26,3 @@ FROM nginx:alpine
 
 # 拷贝静态文件
 COPY --from=build-env /usr/src/hexo-blog/public /usr/share/nginx/html
-COPY --from=build-env /usr/src/hexo-blog/public /tmp/devblog
