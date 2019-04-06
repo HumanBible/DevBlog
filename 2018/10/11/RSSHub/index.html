@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="theme-next muse" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.1" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.4.1',
+    sidebar: {"position":"left","display":"remove","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="前言为了更快捷更方便的获取知识, 我们需要迅速的手段. 但目前的推送机制都是不自由的, 而使用RSS可以保证我们获取想要获取的知识. 为此建立了我们自己的RSS中心. 网站基于开源项目 RSSHub  , 在这先感谢各位开源贡献者. 什么是RSS RSS（简易信息聚合）是一种消息来源格式规范，用以聚合经常发布更新数据的网站，例如博客文章、新闻、音频或视频的网摘。RSS文件（或称做摘要、网上摘要、或">
+<meta name="keywords" content="Rewrite Human Bible">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RSSHub 服务">
+<meta property="og:url" content="http://dev.human-bible.com/2018/10/11/RSSHub/index.html">
+<meta property="og:site_name" content="人类圣经研究会">
+<meta property="og:description" content="前言为了更快捷更方便的获取知识, 我们需要迅速的手段. 但目前的推送机制都是不自由的, 而使用RSS可以保证我们获取想要获取的知识. 为此建立了我们自己的RSS中心. 网站基于开源项目 RSSHub  , 在这先感谢各位开源贡献者. 什么是RSS RSS（简易信息聚合）是一种消息来源格式规范，用以聚合经常发布更新数据的网站，例如博客文章、新闻、音频或视频的网摘。RSS文件（或称做摘要、网上摘要、或">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-12-27T14:15:14.101Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RSSHub 服务">
+<meta name="twitter:description" content="前言为了更快捷更方便的获取知识, 我们需要迅速的手段. 但目前的推送机制都是不自由的, 而使用RSS可以保证我们获取想要获取的知识. 为此建立了我们自己的RSS中心. 网站基于开源项目 RSSHub  , 在这先感谢各位开源贡献者. 什么是RSS RSS（简易信息聚合）是一种消息来源格式规范，用以聚合经常发布更新数据的网站，例如博客文章、新闻、音频或视频的网摘。RSS文件（或称做摘要、网上摘要、或">
+
+
+
+
+
+
+  <link rel="canonical" href="http://dev.human-bible.com/2018/10/11/RSSHub/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>RSSHub 服务 | 人类圣经研究会</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">人类圣经研究会</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">研发组</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">Archives</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-route">
+    <a href="/route/" rel="section">Route</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">About</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://dev.human-bible.com/2018/10/11/RSSHub/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Rewriter">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="人类圣经研究会">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">RSSHub 服务
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-10-11 16:05:53" itemprop="dateCreated datePublished" datetime="2018-10-11T16:05:53+08:00">2018-10-11</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-12-27 22:15:14" itemprop="dateModified" datetime="2018-12-27T22:15:14+08:00">2018-12-27</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>为了更快捷更方便的获取知识, 我们需要迅速的手段. 但目前的推送机制都是不自由的, 而使用<code>RSS</code>可以保证我们获取想要获取的知识. 为此建立了我们自己的<code>RSS</code>中心.</p>
+<p>网站基于开源项目 <a href="https://github.com/DIYgod/RSSHub" target="_blank" rel="noopener">RSSHub</a>  , 在这先感谢各位开源贡献者.</p>
+<h2 id="什么是RSS"><a href="#什么是RSS" class="headerlink" title="什么是RSS"></a>什么是RSS</h2><blockquote>
+<p><strong>RSS</strong>（<strong>简易信息聚合</strong>）是一种<a href="https://zh.wikipedia.org/wiki/%E6%B6%88%E6%81%AF%E4%BE%86%E6%BA%90" target="_blank" rel="noopener">消息来源</a>格式规范，用以<strong>聚合经常发布更新数据的网站</strong>，例如<a href="https://zh.wikipedia.org/wiki/%E9%83%A8%E8%90%BD%E6%A0%BC" target="_blank" rel="noopener">博客</a>文章、新闻、<a href="https://zh.wikipedia.org/wiki/%E9%9F%B3%E8%A8%8A" target="_blank" rel="noopener">音频</a>或<a href="https://zh.wikipedia.org/wiki/%E8%A6%96%E8%A8%8A" target="_blank" rel="noopener">视频</a>的网摘。RSS文件（或称做摘要、网上摘要、或频更新，提供到频道）包含全文或是节录的文字，再加上发布者所订阅之网摘数据和授权的元数据。</p>
+<p>来源 : <a href="https://zh.wikipedia.org/wiki/RSS" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/RSS</a></p>
+</blockquote>
+<h2 id="RSSHub"><a href="#RSSHub" class="headerlink" title="RSSHub"></a>RSSHub</h2><blockquote>
+<p>RSSHub 是一个轻量、易于扩展的 RSS 生成器, 可以给任何奇奇怪怪的内容生成 RSS 订阅源</p>
+</blockquote>
+<p><code>RSS</code> 现在一般是个人博客用的比较多; 大多数信息发布网站都有<code>RSS</code>可以订阅, 但一般数据都比较乱, RSSHub 则可以进行一些过滤和其他的自定义, 让信息更适合我们.</p>
+<h4 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a>官方文档</h4><p><a href="https://docs.rsshub.app/" target="_blank" rel="noopener">https://docs.rsshub.app/</a></p>
+<h2 id="使用范例"><a href="#使用范例" class="headerlink" title="使用范例"></a>使用范例</h2><h4 id="罚抄吧有新帖子了"><a href="#罚抄吧有新帖子了" class="headerlink" title="罚抄吧有新帖子了"></a>罚抄吧有新帖子了</h4><p><a href="https://rsshub.human-bible.org/tieba/forum/rewrite" target="_blank" rel="noopener">https://rsshub.human-bible.org/tieba/forum/rewrite</a></p>
+<h4 id="哔哩哔哩直播间开播"><a href="#哔哩哔哩直播间开播" class="headerlink" title="哔哩哔哩直播间开播"></a>哔哩哔哩直播间开播</h4><p><a href="https://rsshub.human-bible.org/bilibili/live/room/67638" target="_blank" rel="noopener">https://rsshub.human-bible.org/bilibili/live/room/67638</a></p>
+<h4 id="罚抄第一季重置"><a href="#罚抄第一季重置" class="headerlink" title="罚抄第一季重置"></a>罚抄第一季重置</h4><p><a href="https://rsshub.human-bible.org/bilibili/bangumi/5020" target="_blank" rel="noopener">https://rsshub.human-bible.org/bilibili/bangumi/5020</a></p>
+<blockquote>
+<p>除了一样这些 还有很多其他的好玩的订阅 大家可以多去找找</p>
+</blockquote>
+<h2 id="RSS阅读器"><a href="#RSS阅读器" class="headerlink" title="RSS阅读器"></a>RSS阅读器</h2><p><code>RSS</code> 阅读器有很多, 大家可以随便去网上找找. </p>
+<p>一般来说网页版比较方便, <code>Feedly</code> 和 <code>Inoreader</code> 都不错. </p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/25/Bonfire/" rel="next" title="篝火">
+                <i class="fa fa-chevron-left"></i> 篝火
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Rewriter</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Muse</a> v6.4.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

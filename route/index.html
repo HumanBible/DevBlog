@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="theme-next muse" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.1" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.4.1',
+    sidebar: {"position":"left","display":"remove","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Github人类圣经研究会https://github.com/HumanBible 主要是放置一些代码和一些静态站的源码, 本博客的源码也是放置在这上面. 所有研究会的公开代码都会放在这个组织下的仓库中. 罚学院https://github.com/Chinese-Academy-of-Rewrite 主要是放置 http://rewrite.ac.cn 的源码. 项目管理相关Trello (看">
+<meta name="keywords" content="Rewrite Human Bible">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ROUTE">
+<meta property="og:url" content="http://dev.human-bible.com/route/index.html">
+<meta property="og:site_name" content="人类圣经研究会">
+<meta property="og:description" content="Github人类圣经研究会https://github.com/HumanBible 主要是放置一些代码和一些静态站的源码, 本博客的源码也是放置在这上面. 所有研究会的公开代码都会放在这个组织下的仓库中. 罚学院https://github.com/Chinese-Academy-of-Rewrite 主要是放置 http://rewrite.ac.cn 的源码. 项目管理相关Trello (看">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-12-27T14:15:14.102Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ROUTE">
+<meta name="twitter:description" content="Github人类圣经研究会https://github.com/HumanBible 主要是放置一些代码和一些静态站的源码, 本博客的源码也是放置在这上面. 所有研究会的公开代码都会放在这个组织下的仓库中. 罚学院https://github.com/Chinese-Academy-of-Rewrite 主要是放置 http://rewrite.ac.cn 的源码. 项目管理相关Trello (看">
+
+
+
+
+
+
+  <link rel="canonical" href="http://dev.human-bible.com/route/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>ROUTE | 人类圣经研究会</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">人类圣经研究会</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">研发组</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">Archives</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-route menu-item-active">
+    <a href="/route/" rel="section">Route</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">About</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+    
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+    
+
+  
+
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+    
+    
+    <div class="post-block page">
+      <header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">ROUTE</h1>
+
+<div class="post-meta">
+  
+  
+
+
+
+</div>
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+        
+        
+          <h2 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h2><h3 id="人类圣经研究会"><a href="#人类圣经研究会" class="headerlink" title="人类圣经研究会"></a>人类圣经研究会</h3><p><a href="https://github.com/HumanBible" target="_blank" rel="noopener">https://github.com/HumanBible</a></p>
+<p>主要是放置一些代码和一些静态站的源码, 本博客的源码也是放置在这上面. 所有研究会的公开代码都会放在这个组织下的仓库中.</p>
+<h3 id="罚学院"><a href="#罚学院" class="headerlink" title="罚学院"></a>罚学院</h3><p><a href="https://github.com/Chinese-Academy-of-Rewrite" target="_blank" rel="noopener">https://github.com/Chinese-Academy-of-Rewrite</a></p>
+<p>主要是放置 <a href="http://rewrite.ac.cn" target="_blank" rel="noopener">http://rewrite.ac.cn</a> 的源码.</p>
+<h2 id="项目管理相关"><a href="#项目管理相关" class="headerlink" title="项目管理相关"></a>项目管理相关</h2><h3 id="Trello-看板"><a href="#Trello-看板" class="headerlink" title="Trello (看板)"></a>Trello (看板)</h3><p><a href="https://trello.com/humanbible" target="_blank" rel="noopener">https://trello.com/humanbible</a></p>
+<p>主要是管理一些开发的任务, 公开的团队所有人都可以看, 但是只有团队成员可以编辑.</p>
+<h3 id="Slack-聊天"><a href="#Slack-聊天" class="headerlink" title="Slack (聊天)"></a>Slack (聊天)</h3><p><a href="https://human-bible.slack.com" target="_blank" rel="noopener">https://human-bible.slack.com</a></p>
+<p>主要是为了以后成员和项目过多之后建立的, 会区分不同项目建立频道, 主要是研发相关的工作在这里交流. </p>
+<blockquote>
+<p> 目前暂时未使用.</p>
+</blockquote>
+<h2 id="成员交流"><a href="#成员交流" class="headerlink" title="成员交流"></a>成员交流</h2><h3 id="QQ"><a href="#QQ" class="headerlink" title="QQ"></a>QQ</h3><p>人类圣经研究会 主群 : 893129876</p>
+<p>罚楼之子扭曲群 : 562383341</p>
+
+        
+      </div>
+      
+      
+      
+    </div>
+    
+
+
+
+    
+    
+    
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Rewriter</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Muse</a> v6.4.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
